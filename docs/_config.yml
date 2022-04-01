@@ -18,20 +18,32 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Ripe Lau 
-email: bft860@myy.haaga-helia.fi
+title: Tidbits and tinkerings
+email: okayto.spamhere@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Old school, new school - nothing too cool.
-baseurl: "" # the subpath of your site, e.g. /blog
+  Old school, new school - nothing too cool
 domain: lauripe.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 url: https://lauripe.github.io  # the base hostname and protocol for your site, e.g. http://example.com
-baseurl: /lauripe.github.io/docs/
+baseurl: ""
+
+permalink: /:title/
 
 # Build settings
-remote_theme: pages-themes/minimal@v0.2.0
+theme: minima
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+
+#remote_theme: pages-themes/minimal@v0.2.0
+#plugins:
+#  - jekyll-remote-theme  
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

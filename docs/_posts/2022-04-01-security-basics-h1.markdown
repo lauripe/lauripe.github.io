@@ -5,8 +5,8 @@ date:   2022-04-01 20:12:00 +0300
 categories: ICT4HM103
 ---
 ## Cyber Kill Chain and MITRE ATT&CK
-Foundations:
-- Cyber Kill Chain -model is based on Locheed Martins research paper from 2011
+##### Foundations
+- Cyber Kill Chain -model is based on [Locheed Martins research paper from 2011](https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf)
     - Presents a 7-phase "kill-chain" model derived from traditional warfare into cyber security
         - Instead of trivial run-and-gun cyber-mischief, the model concentrates on so called Advanced Persistent Threat (APT), where the attacker might use years to discreetly close upon the objectives
         - Key takeaway in the model is, that when any of the phases is disturbed, the outcome is also compromised
@@ -14,13 +14,13 @@ Foundations:
         - By identifying and collecting indicators against the known phases, the model provides a framework for assigning  mitigations against also the probable upcoming efforts - leading into a cat and mouse game of adversarial engineering.
 
 - MITRE ATT&CK is maintained by a non-profit organization
-    - Provides a highly detailed framwork of the structure and applicaple methods for cyber warfare and general mischief, along with their corresponding mitigations.
+    - Provides a [highly detailed framwork](https://attack.mitre.org/matrices/enterprise/) of the structure and applicaple methods for cyber warfare and general mischief, along with their corresponding mitigations.
         - The framework shouldn't have any commercial or other limitations for anyone to take advantage of the provided information.
         - The openess obviously swings both ways, and I would assume that while providing a solid ground for protection against even APT kinds of threats, the MITRE framework also works as a playbook for malicious actors against maybe not so well informed targets.
 
 
-
-While Kill Chain has lots of interesting insight, and the model is clearly laid out and supposingly relatively easy to apply on mitigating real life threat, the publicly available research paper is from a point of time. Meanwhile MITREs framework is constantly reviewed against emerging incidents, and therefore it should be applicaple also to the threats of tomorrow by anyone concerned. Locheed Martin does seem to have kept up the research, but at least to a peasant in the field, their public offering does come out as a marketing front end ([source](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html#Resources)).
+##### Ponderings
+While Kill Chain has lots of interesting insight, and the model is clearly laid out and supposingly relatively easy to apply on mitigating real life threat, the publicly available research paper is from a point of time. Meanwhile MITREs framework is constantly reviewed against emerging incidents, and therefore it should be applicaple also to the threats of tomorrow by anyone concerned. Locheed Martin does seem to have kept up the research, but at least to a peasant in the field, their public offering does come out as [a marketing front end](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html#Resources).
 
 On the other hand, these shouldn't be competing against each other, and I suppose one can find complementary use of both - While having also a good amount of detail, the publicly available Kill chain -model provides a higher level scaffolding, while MITRE:S framework really deep dives on very spesific technical details related to potential threats and their possible mitigations.
 
@@ -36,7 +36,7 @@ asdf
 
 ## Virtual sandbox setup
 - When trying to cause havoc or break into something, it's good to have a separate environment - such as a summer cabin or a VM
-- This isn't the suggested VirtualBox, but I was keen to try how Canonical Multipass works with arm-cpu. Let's see..
+- This isn't the suggested VirtualBox, but I was keen to try how [Canonical Multipass](https://multipass.run) works with a recent arm-cpu. Let's see..
 
 #### Host:
 - CPU: 10 core arm
@@ -68,8 +68,10 @@ ubuntu@sandbox:~$ sudo apt install ubuntu-desktop xrdp
     - Internet works, but browsing is a pain
     - Same applies to pretty much anything
 - Everything was fine from the shell prior RDP, so I'll try to stick with that
-    - If GUI is needed, I'll try to scale up or just instatiate another VM
-    - If x86 is needed, the same is easily brought up on another host
+    - If GUI is needed, It's either scale up or another Instance
+        - This is a good test for Multipass
+    - If x86 is needed, the same should be easily brought up on another host
+        - Portability is another good VM-engine test-case
 - Initial experience from multipass was very nice and creating a local VM has a "cloudish" feel to it. 
     - I did use the interactive shell a bit in the setup, but I'd assume everything should be possible to drive (automated) from the host.
 

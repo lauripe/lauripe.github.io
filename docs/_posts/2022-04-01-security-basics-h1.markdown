@@ -31,14 +31,14 @@ On the other hand, these shouldn't be competing against each other, and I suppos
 
 NSO Group is a Israeli tech company, and their main product is a highly sophisticated spyware called Pegasus. Pegasus allows the operator to target any arbitary mobile phone by luring the user to click a malicicious link on a text message, email or a website, which then launches an chained attack against the system eventually giving the remote operator full access to the mobile device. This includes exposing the location of the user along with a wiretap-cabability to all communications, such as calls and Whatsapp messages.
 
-NSO Group states that the software is created to save lives and it should be targeted towards hostile or criminal actors - however, many emerging cases show that it has ended up being used for spying human right activists, and basically anyone close to a person or organization seen as a threat by the operator. 
+NSO Group states that the software is created to save lives and it should be targeted towards hostile or criminal actors - however, many emerging cases show that it has ended up being used for spying human right activists, and basically anyone close to a person or organization seen as a threat by the operator. NSO Group obviously has control over who they sell the software, and have also agreed with Israeli goverment that all customers need to be approved by them, as in trade of conventional weapons. After the sales, NSO supposingly doesn't intervene with the actual use of their software, and many examples have been exposed to the public where Pegasus has been used against slightly "off target" persons, such as minor family members of the actual target - and also against persons who's intentions can't really be seen as criminal or life threatening, but having a political discord instead.
 
 Pegasus came to the limelights on 2016 incident, when a regognized human rights spokesperson from United Arab Emirates, Ahmed Mansoor was targeted by a highly elaborate attack gaining control over his iPhone. Mansoor was however vigilant, as he had been a target of multiple spyware attacks also prior Pegasus, and did find the SMS message used in the exploit suspicious enough to take the matter to be looked into by experts in the field - [Citizenlab](https://citizenlab.ca/2016/08/million-dollar-dissident-iphone-zero-day-nso-group-uae/).
 
 ### Breakdown and analysis
 Prior 2016 Apple devices were considered very difficult to break into, as the system doesn't allow execution of any code that doensn't originate from the official marketplace. NSO:s Pegasus software however took advantage of chaining three zero-day exploits to gain control of the device. Exploit chain dubbed as "Trident" was crafted from the following exploits:
 - [CVE-2016-4657](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4657) WebKit in Apple iOS before 9.3.5 allows remote attackers to execute arbitrary code
-    - Link to malicisious website was sent via highly targeted SMS, with a content very relevant to the target
+    - Link to malicious website was sent via highly targeted SMS, with a content very relevant to the target
         - This was made possible by the intelligence gained from 1st reconnaissance phase in "Cyber Kill Chain" model
     - The JavaScript program on the linked website took advantage of the bug in WebKit, and was able to write an executable code on the phone
         - Phases 2 and 3 in Kill Chain - Weaponization and Delivery
@@ -93,7 +93,7 @@ ubuntu@sandbox:~$ sudo apt install ubuntu-desktop xrdp
         - Xubuntu was also suggested by course materials as an alternative to Debian.
 - Everything was fine from the shell prior RDP, so I'll try to stick with that
     - If GUI is needed, It's either XFCE, scale up the VM or create a beefier instance
-        - This is a good test for Multipass
+        - This is a good test for Multipass features
     - If x86 is needed, the same should be easily brought up on another host
         - Portability is another good multipass test-case
 - Initial experience from multipass was very nice and creating a local VM has a "cloudish" feel to it. 

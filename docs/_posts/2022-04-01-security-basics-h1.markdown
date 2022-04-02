@@ -11,7 +11,7 @@ categories: ICT4HM103
         - Instead of trivial run-and-gun cyber-mischief, the model concentrates on so called Advanced Persistent Threat (APT), where the attacker might use years to discreetly close upon the objectives
         - Key takeaway in the model is, that when any of the phases is disturbed, the outcome is also compromised
         - Countermeasures are set against these known 7 phases, including constant monitoring of the attempted measures.
-        - By identifying and collecting indicators against the known phases, the model provides a framework for assigning  mitigations against also the probable upcoming efforts - leading into a cat and mouse game of adversarial engineering.
+        - By identifying and collecting indicators against the known phases, the model provides a framework for assigning  mitigations against also the probable upcoming efforts.
 
 - MITRE ATT&CK is maintained by a non-profit organization
     - Provides a [highly detailed framwork](https://attack.mitre.org/matrices/enterprise/) of the structure and applicaple methods for cyber warfare and general mischief, along with their corresponding mitigations.
@@ -20,9 +20,9 @@ categories: ICT4HM103
 
 
 ##### Ponderings
-While Kill Chain has lots of interesting insight, and the model is clearly laid out and supposingly relatively easy to apply on mitigating real life threat, the publicly available research paper is from a point of time. Meanwhile MITREs framework is constantly reviewed against emerging incidents, and therefore it should be applicaple also to the threats of tomorrow by anyone concerned. Locheed Martin does seem to have kept up the research, but at least to a peasant in the field, their public offering does come out as [a marketing front end](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html#Resources).
+While Kill Chain has lots of interesting insight, and the model is clearly laid out and supposingly relatively easy to apply on mitigating real life threat, the publicly available research paper is from a quite different time (2008). Meanwhile MITREs framework is constantly reviewed against emerging incidents, and therefore it should be applicaple also to the threats of tomorrow by anyone concerned. Locheed Martin does seem to have kept up the research, but at least to a peasant in the field, their public offering does come out as [a marketing front end](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html#Resources).
 
-On the other hand, these shouldn't be competing against each other, and I suppose one can find complementary use of both - While having also a good amount of detail, the publicly available Kill chain -model provides a higher level scaffolding, while MITRE:S framework really deep dives on very spesific technical details related to potential threats and their possible mitigations.
+On the other hand, these shouldn't be competing against each other, and I suppose one can find complementary use of both - While having also a good amount of detail, the publicly available Kill chain -model provides a higher level scaffolding, while MITREs framework really deep dives on very spesific technical details related to potential threats and their possible mitigations.
 
 ---
 
@@ -35,12 +35,15 @@ asdf
 ---
 
 ## Virtual sandbox setup
-- When trying to cause havoc or break into something, it's good to have a separate environment - such as a summer cabin or a VM
-- This isn't the suggested VirtualBox, but I was keen to try how [Canonical Multipass](https://multipass.run) works with a recent arm-cpu. Let's see..
+When trying to cause havoc or break into something, it's good to have a separate environment - such as a summer cabin or a VM
+- This isn't the [suggested VirtualBox](https://terokarvinen.com/2021/install-debian-on-virtualbox/), but I was keen to try how [Canonical Multipass](https://multipass.run) works with a recent arm-cpu. Let's see..
 
 #### Host:
-- CPU: 10 core arm
+- CPU: 10 Core (arm)
 - Mem: 16 GB
+#### VM:
+- CPU: 1 Core
+- Mem: 1 GB 
 
 {% highlight bash %}
 ### Spin up default vm and check where and what it is
@@ -81,8 +84,8 @@ ubuntu@sandbox:~$ sudo apt install ubuntu-desktop xrdp
 #### Remote desktop and terminal on host
 ![Screencap](/assets/img/desktop-2022-04-01.png)
 
-
 ---
+
 References
 - [Cyber Kill Chain](https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf)
 - [MITRE ATT&CK](https://attack.mitre.org/)

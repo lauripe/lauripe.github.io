@@ -26,16 +26,35 @@ On the other hand, these shouldn't be competing against each other, and I suppos
 
 ---
 
-## Security incident (tbd) summary
-asdf
+## NSO Group and Pegasus -  The road to hell is paved with good intentions?
+[Darknet Diaries, Episode 100](https://darknetdiaries.com/episode/100/)
+
+NSO Group is a Israeli tech company, and their main product is a highly sophisticated spyware called Pegasus. Pegasus allows the operator to target any arbitary mobile phone by luring the user to click a malicicious link on a text message, email or a website, which then launches an chained attack against the system eventually giving the remote operator full access to the mobile device. This includes exposing the location of the user along with a wiretap-cabability to all communications, such as calls and Whatsapp messages.
+
+NSO Group states that the software is created to save lives and it should be targeted towards hostile or criminal actors - however, many emerging cases show that it has ended up being used for spying human right activists, and basically anyone close to a person or organization seen as a threat by the operator. 
+
+Pegasus came to the limelights on 2016 incident, when a regognized human rights spokesperson from United Arab Emirates, Ahmed Mansoor was targeted by a highly elaborate attack gaining control over his iPhone. Mansoor was however vigilant, as he had been a target of multiple spyware attacks also prior Pegasus, and did find the SMS message used in the exploit suspicious enough to take the matter to be looked into by experts in the field - [Citizenlab](https://citizenlab.ca/2016/08/million-dollar-dissident-iphone-zero-day-nso-group-uae/).
 
 ### Breakdown and analysis
-asdf
+Prior 2016 Apple devices were considered very difficult to break into, as the system doesn't allow execution of any code that doensn't originate from the official marketplace. NSO:s Pegasus software however took advantage of chaining three zero-day exploits to gain control of the device. Exploit chain dubbed as "Trident" was crafted from the following exploits:
+- [CVE-2016-4657](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4657) WebKit in Apple iOS before 9.3.5 allows remote attackers to execute arbitrary code
+    - Link to malicisious website was sent via highly targeted SMS, with a content very relevant to the target
+        - This was made possible by the intelligence gained from 1st reconnaissance phase in "Cyber Kill Chain" model
+    - The JavaScript program on the linked website took advantage of the bug in WebKit, and was able to write an executable code on the phone
+        - Phases 2 and 3 in Kill Chain - Weaponization and Delivery
+- [CVE-2016-4655](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4655) The kernel in Apple iOS before 9.3.5 allows attackers to obtain sensitive information from memory
+    - As Apple devices won't allow execution of any foreign code without jailbreaking, the second and third step did just that. By using two vuneralibities unknown to Apple at that point of time, the  and installed the launched the Pegasus software on the device.
+        - Phases 4 and 5 in Kill Chain - Exploitation and Installation
+- [CVE-2016-4656](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4656) The kernel in Apple iOS before 9.3.5 allows attackers to execute arbitrary code in a privileged context 
+    - After being deployed, the Pegasus software itself doesn't rely on any exploits but works with the phones inbuilt features instead
+        - This completes the Kill Chain model with phases 6 and 7, establishing remote access to the device and providing the attackers the means to the actual goal - gaining access to all communications and the physical location of the device.
+
+
 
 ---
 
 ## Virtual sandbox setup
-When trying to cause havoc or break into something, it's good to have a separate environment - such as a summer cabin or a VM
+When trying to cause havoc or break into something, it's good to have a separate environment - such as a summer cabin or a VM.
 - This isn't the [suggested VirtualBox](https://terokarvinen.com/2021/install-debian-on-virtualbox/), but I was keen to try how [Canonical Multipass](https://multipass.run) works with a recent arm-cpu. Let's see..
 
 #### Host:
@@ -46,7 +65,7 @@ When trying to cause havoc or break into something, it's good to have a separate
 - Mem: 1 GB 
 
 {% highlight bash %}
-### Spin up default vm and check where and what it is
+# Spin up default vm and check where and what it is
 lauripessi@Lauris-MBP-14 ~ % multipass launch --name sandbox
 Launched: sandbox                                                 
 
@@ -70,11 +89,13 @@ ubuntu@sandbox:~$ sudo apt install ubuntu-desktop xrdp
 - After a brief tinkering with the GUI, I realize I should be more generous with the VM resources 
     - Internet works, but browsing is a pain
     - Same applies to pretty much anything
+    - I might try changing the desktop from Ubuntu to XFCE, as it's supposed to be less demanding
+        - Xubuntu was also suggested by course materials as an alternative to Debian.
 - Everything was fine from the shell prior RDP, so I'll try to stick with that
-    - If GUI is needed, It's either scale up or another Instance
+    - If GUI is needed, It's either XFCE, scale up the VM or create a beefier instance
         - This is a good test for Multipass
     - If x86 is needed, the same should be easily brought up on another host
-        - Portability is another good VM-engine test-case
+        - Portability is another good multipass test-case
 - Initial experience from multipass was very nice and creating a local VM has a "cloudish" feel to it. 
     - I did use the interactive shell a bit in the setup, but I'd assume everything should be possible to drive (automated) from the host.
 
@@ -87,7 +108,8 @@ ubuntu@sandbox:~$ sudo apt install ubuntu-desktop xrdp
 ---
 
 References
-- [Cyber Kill Chain](https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf)
+- [Cyber Kill Chain Whitepaper](https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf)
+- [Locheed Martin](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html)
 - [MITRE ATT&CK](https://attack.mitre.org/)
 - [Darknet Diaries](https://darknetdiaries.com/)
 - [Canonical Multipass](https://multipass.run)

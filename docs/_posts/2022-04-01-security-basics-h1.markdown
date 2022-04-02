@@ -60,6 +60,7 @@ When trying to cause havoc or break into something, it's good to have a separate
 #### Host:
 - CPU: 10 Core (arm)
 - Mem: 16 GB
+
 #### VM:
 - CPU: 1 Core
 - Mem: 1 GB 

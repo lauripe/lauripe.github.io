@@ -107,10 +107,11 @@ ubuntu@sandbox:~$ sudo apt install ubuntu-desktop xrdp
 
 ---
 
-References
+References:
 - [Cyber Kill Chain Whitepaper](https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf)
 - [Locheed Martin](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html)
 - [MITRE ATT&CK](https://attack.mitre.org/)
+- [Common Vulnerabilities and Exposures](https://cve.mitre.org/index.html)
 - [Darknet Diaries](https://darknetdiaries.com/)
 - [Canonical Multipass](https://multipass.run)
 

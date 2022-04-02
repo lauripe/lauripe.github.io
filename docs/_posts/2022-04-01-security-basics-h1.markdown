@@ -43,7 +43,7 @@ Prior 2016 Apple devices were considered very difficult to break into, as the sy
     - The JavaScript program on the linked website took advantage of the bug in WebKit, and was able to write an executable code on the phone
         - Phases 2 and 3 in Kill Chain - Weaponization and Delivery
 - [CVE-2016-4655](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4655) The kernel in Apple iOS before 9.3.5 allows attackers to obtain sensitive information from memory
-    - As Apple devices won't allow execution of any foreign code without jailbreaking, the second and third step did just that. By using two vuneralibities unknown to Apple at that point of time, the  and installed the launched the Pegasus software on the device.
+    - As Apple devices won't allow execution of any foreign code without jailbreaking, the second and third step did just that. By using two vuneralibities unknown to Apple at that point of time, the exploit jailbroke the device, and then installed and started the Pegasus software on it.
         - Phases 4 and 5 in Kill Chain - Exploitation and Installation
 - [CVE-2016-4656](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4656) The kernel in Apple iOS before 9.3.5 allows attackers to execute arbitrary code in a privileged context 
     - After being deployed, the Pegasus software itself doesn't rely on any exploits but works with the phones inbuilt features instead

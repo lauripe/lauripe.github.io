@@ -162,5 +162,6 @@ References:
 - [Common Vulnerabilities and Exposures](https://cve.mitre.org/index.html)
 - [Darknet Diaries](https://darknetdiaries.com/)
 - [Canonical Multipass](https://multipass.run)
+- [Canonical cloud-init](https://cloud-init.io)
 
 Assignment: [h1](https://terokarvinen.com/2021/trust-to-blockchain-2022/)

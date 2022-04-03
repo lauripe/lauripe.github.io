@@ -26,7 +26,7 @@ On the other hand, these shouldn't be competing against each other, and I suppos
 
 ---
 
-## NSO Group and Pegasus -  The road to hell is paved with good intentions?
+## NSO Group and Pegasus -  The root to shell is paved with good intentions?
 [Darknet Diaries, Episode 100](https://darknetdiaries.com/episode/100/)
 
 NSO Group is a Israeli tech company, and their main product is a highly sophisticated spyware called Pegasus. Pegasus allows the operator to target any arbitary mobile phone by luring the user to click a malicicious link on a text message, email or a website, which then launches an chained attack against the system eventually giving the remote operator full access to the mobile device. This includes exposing the location of the user along with a wiretap-cabability to all communications, such as calls and Whatsapp messages.

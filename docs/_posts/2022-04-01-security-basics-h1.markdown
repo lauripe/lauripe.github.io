@@ -54,28 +54,30 @@ Prior 2016 Apple devices were considered very difficult to break into, as the sy
 ---
 
 ## Virtual sandbox setup
-When trying to cause havoc or break into something, it's good to have a separate environment - such as a summer cabin or a VM.
+When trying to cause havoc or break into something, it's good to have an isolated environment - such as a summer cabin or a VM.
 - This isn't the [suggested VirtualBox](https://terokarvinen.com/2021/install-debian-on-virtualbox/), but I was keen to try how [Canonical Multipass](https://multipass.run) works with a recent arm-cpu. Let's see..
 
 #### Host:
 - CPU: 10 Core (arm)
 - Mem: 16 GB
+- MacOs 12.3
 
 #### VM:
 - CPU: 1 Core
 - Mem: 1 GB 
+- Ubuntu 20.04 LTS
 
 {% highlight bash %}
 # Spin up default vm and check where and what it is
-lauripessi@Lauris-MBP-14 ~ % multipass launch --name sandbox
+lauripessi@Laurisxxx ~ % multipass launch --name sandbox
 Launched: sandbox                                                 
 
-lauripessi@Lauris-MBP-14 ~ % multipass ls
+lauripessi@Laurisxxx ~ % multipass ls
 Name                    State             IPv4             Image
 sandbox                 Running           192.168.205.3    Ubuntu 20.04 LTS
 
 # Login to VM, set a clever password and setup gui & rdp
-lauripessi@Lauris-MBP-14 ~ % multipass shell sandbox
+lauripessi@Laurisxxx ~ % multipass shell sandbox
 ubuntu@sandbox:~$ sudo passwd ubunbu
 ubuntu@sandbox:~$ sudo apt update
 ubuntu@sandbox:~$ sudo apt install ubuntu-desktop xrdp
@@ -103,8 +105,53 @@ ubuntu@sandbox:~$ sudo apt install ubuntu-desktop xrdp
 #### Hardinfo utility on Ubuntu via RDP
 ![Screencap](/assets/img/desktop2-2022-04-01.png)
 
-#### Remote desktop and terminal on host
+#### Ubuntu on RDP and terminal on host
 ![Screencap](/assets/img/desktop-2022-04-01.png)
+
+## Virtual sandbox setup v2
+A second attempt with following goals
+- To fix the performance issues with previous examples 
+- To get rid of the manual tinkering during the setup
+
+### VM 
+- 2 Core
+- 4 GB Memory
+- 10 GB Disk
+
+#### Cloud-init configuration
+{% gist 3c67c271ec280e65f1d0cda6a23d36eb %}
+
+{% highlight bash %}
+lauripessi@Laurisxxx vm % multipass launch -n xubu-sandbox \
+    -c 2 -m 4G -d 10G \
+    --cloud-init xubuntu-config.yaml \
+    --timeout 1800
+Launched: xubu-sandbox
+
+lauripessi@Laurisxxx vm % multipass info xubu-sandbox
+Name:           xubu-sandbox
+State:          Running
+IPv4:           192.168.205.6
+Release:        Ubuntu 20.04.4 LTS
+Image hash:     add2f33bf439 (Ubuntu 20.04 LTS)
+Load:           0.03 0.03 0.00
+Disk usage:     4.8G out of 9.5G
+Memory usage:   193.4M out of 3.8G
+Mounts:         --
+{% endhighlight %}
+
+
+#### V2 Outcome
+- I wasn't able to login via RDP as the user defined in cloud-init
+    - First I tried resetting the password via shell
+    - Then I peeked into xrdp.log and tinkered with .pem file/link privileges which fixed the initial permission issue, but not the actual functionality
+    - Got frustrated and wen't back to default user Ubuntu
+- RDP worked fine when logging as Ubuntu (after setting a password for it from the shell)
+- Now at least the performance issues were gone, and the GUI was reasonably nippy even when browsing colorful websites.
+
+
+#### Xubuntu
+![Screencap](/assets/img/xubu-desktop-2022-04-03.png)
 
 ---
 

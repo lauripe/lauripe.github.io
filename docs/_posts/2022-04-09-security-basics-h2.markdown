@@ -317,12 +317,49 @@ Started: Fri Apr  8 14:36:21 2022
 Stopped: Fri Apr  8 14:36:38 2022
 ```
 
+Cracking took 17 seconds with rate of 139.3 MH/s
 Let's see what was hidden in that hash:
 
 ```
 % cat crack.pot 
 21232f297a57a5a743894a0e4a801fc3:admin
 ```
+
+As the passphrase was so short and the benchmark earlier estimated 5700 MH/s rate, I got curious to see how fast a simple brute without dictionary could solve the same.
+
+```
+# Disable potfile as it already holds the correct answer
+% hashcat -O -m 0 -a 3 -i 21232f297a57a5a743894a0e4a801fc3 -o crack.pot --potfile-disable
+
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 0 (MD5)
+Hash.Target......: 21232f297a57a5a743894a0e4a801fc3
+Time.Started.....: Sat Apr  9 18:38:29 2022 (0 secs)
+Time.Estimated...: Sat Apr  9 18:38:29 2022 (0 secs)
+Kernel.Feature...: Optimized Kernel
+Guess.Mask.......: ?1?2?2?2?2 [5]
+Guess.Charset....: -1 ?l?d?u, -2 ?l?d, -3 ?l?d*!$@_, -4 Undefined 
+Guess.Queue......: 5/15 (33.33%)
+Speed.#1.........:  2662.9 MH/s (6.18ms) @ Accel:1024 Loops:62 Thr:32 Vec:1
+Recovered.Total..: 1/1 (100.00%) Digests
+Progress.........: 32505856/104136192 (31.21%)
+Rejected.........: 0/32505856 (0.00%)
+Restore.Point....: 0/1679616 (0.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-62 Iteration:0-62
+Candidate.Engine.: Device Generator
+Candidates.#1....: sarie -> Xsnc1
+Hardware.Mon.SMC.: Fan0: 0%, Fan1: 0%
+Hardware.Mon.#1..: Util:  0%
+
+Started: Sat Apr  9 18:38:28 2022
+Stopped: Sat Apr  9 18:38:31 2022
+```
+
+Ok, way faster! Simple guesswork took only 3 seconds with rate of 2662.9 MH/s
+During that time 32 505 856 candidates were tried prior cracking the correct value.
+
 
 ---
 

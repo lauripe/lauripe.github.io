@@ -450,7 +450,7 @@ With the more intensive profile I could shave off few weeks from the estimate ha
 
 ```
 # Calculate a hash (and remember to omit the newline)
-% echo -n "kissa123" | md5 > my.hash
+% echo -n 'Kissa234' | md5 > my.hash
 
 # Crack the calculated hash
 % hashcat -O -m 0 -a 3 -i my.hash -o crack.pot
@@ -460,37 +460,37 @@ With the more intensive profile I could shave off few weeks from the estimate ha
 Session..........: hashcat
 Status...........: Cracked
 Hash.Mode........: 0 (MD5)
-Hash.Target......: 13c3a117d0013ab22417c8edca354b76
-Time.Started.....: Sat Apr  9 14:29:59 2022 (0 secs)
-Time.Estimated...: Sat Apr  9 14:29:59 2022 (0 secs)
+Hash.Target......: f2805d0412dbd008ad4c95fb01e342b9
+Time.Started.....: Sat Apr  9 18:12:46 2022 (0 secs)
+Time.Estimated...: Sat Apr  9 18:12:46 2022 (0 secs)
 Kernel.Feature...: Optimized Kernel
 Guess.Mask.......: ?1?2?2?2?2?2?2?3 [8]
 Guess.Charset....: -1 ?l?d?u, -2 ?l?d, -3 ?l?d*!$@_, -4 Undefined 
 Guess.Queue......: 8/15 (53.33%)
-Speed.#1.........:  4822.2 MH/s (6.05ms) @ Accel:512 Loops:128 Thr:32 Vec:1
+Speed.#1.........:  4824.5 MH/s (6.05ms) @ Accel:512 Loops:128 Thr:32 Vec:1
 Recovered.Total..: 1/1 (100.00%) Digests
-Progress.........: 1778384896/5533380698112 (0.03%)
-Rejected.........: 0/1778384896 (0.00%)
+Progress.........: 1811939328/5533380698112 (0.03%)
+Rejected.........: 0/1811939328 (0.00%)
 Restore.Point....: 0/68864256 (0.00%)
-Restore.Sub.#1...: Salt:0 Amplifier:6656-6784 Iteration:0-128
+Restore.Sub.#1...: Salt:0 Amplifier:6784-6912 Iteration:0-128
 Candidate.Engine.: Device Generator
-Candidates.#1....: 3qaerane -> 42264d12
-Hardware.Mon.SMC.: Fan0: 0%, Fan1: 0%
+Candidates.#1....: 522erane -> yut64d12
+Hardware.Mon.SMC.: Fan0: 40%, Fan1: 39%
 Hardware.Mon.#1..: Util:100%
 
-Started: Sat Apr  9 14:29:26 2022
-Stopped: Sat Apr  9 14:30:01 2022
+Started: Sat Apr  9 18:12:13 2022
+Stopped: Sat Apr  9 18:12:48 2022
 
 
 # Validate the result
 % cat crack.pot
-% 13c3a117d0013ab22417c8edca354b76:kissa123
+f2805d0412dbd008ad4c95fb01e342b9:Kissa234
 ```
 
 Even though 8 characters used to be ok for passwords, MD5 is just weak against modern computers.
 - Correct input for given hash was guessed using brute force in ~35 seconds.
-- Hash rate: 4822 MH/s
-- 1 778 384 896 candidates were tried prior finding the correct answer
+- Hash rate: 4824.5 MH/s
+- 1 811 939 328 candidates were tried prior finding the correct answer
 
 ---
 

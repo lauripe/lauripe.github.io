@@ -7,7 +7,7 @@ categories: ICT4HM103
 
 ## Applied cryptography - Protocol Building Blocks
 
-#### The definition
+### The definition
 - What distiguishes __protocol__ from an arbitary task is that it has at least two participants
 - In addition, all participants need to know the steps involved, and also agree to follow them
 - All the steps need to be clearly defined, and cover all the possible scenarios within the protocol
@@ -19,12 +19,85 @@ In the context of cryptography, a __cryptographic protocol__ is one that is usin
 - in simultaneus signing of a contract
 - and lot of other scenarios.
 
+### Cryptographic protocols
 On high level the cryptographic protocols can be classified in three categories
 - Arbitrated Protocols
+    - Involves 3rd external who's trusted by both participants
+    - Arbitrator mediates the transactions, and makes sure neither side is cheating
+    - Single point of failure, all communications are dependent on arbitrator availability
 - Adjudicated Protocols
+    - Involves also an arbitrator party, but only when trust is explicitly needed
+        - This kind of arbitrator can be called as adjucator
+    - Interaction can take place directly between participants and adjucator is used only in case of dispute
+    - While the protocol itself doesn't prevent cheating, the evident detection of cheating does
 - Self-Enforcing Protocols
+    - No external parties involved
+    - The protocol itself protects against cheating
+
+### Attacks against protocols
+- Passive attacks
+    - Eavesdropping
+    - Aim is to gather information instead of affecting the outcome
+    - Harder to detect
+- Active attacks
+    - Aims to change the outcome of the protocol to attackers advantage
+        - Can be used also for information gathering
+    - Methods can be e.g.
+        - Impersonation
+        - Altering, deleting or creating completely new messages
+        - Replaying old messages
+        - Altering stored information
+
+### One-way cryptography
+- On symmetric cryptography both participants need to agree on the used encryption algorithm and the secret key prior staring the communication
+    - The setup likely involves physical involvement, as digital channels cannot be used prior encryption without risk of compromising the security
+    - Not very practical
+
+One way cryptography solves the setup challenge involved in symmetric approach
+- One way functions can be easily calculated, but the original value is extremely difficult to solve from the function output
+    - One way hash functions are used in many cryptographic protocols, such as public-key cryptography
+        - Public key can be easily shared over non-trusted network
+        - Private key is well kept secret
+        - Messages are be encrypted with shared public key, and can be only decrypted with private key
 
 [Schneier 2015: Applied Cryptography](https://learning.oreilly.com/library/view/applied-cryptography-protocols/9781119096726/10_chap02.html)
+
+---
+
+## Security Penetration Testing
+### Hacking user credentials
+
+#### Password encryption
+- User credentials are stored in applications own password storage, for which there are multiple implementations
+    - In the worst case (or the best if you're the one hacking), the stored passwords are not encrypted at all, so all you need is to gain access to the storage
+    - Different encryption methods offer a different level of protection
+        - Old versions of Windows use LanMan hash, which has practically no protection against modern computers
+            - Values are all-uppercase and split into 7-byte segments
+            - Attacker can solve each segment separately, instead of struggling with 14 or 21 byte keys
+        - Modern Windows OS uses NTLM which is more secure while still having one obvious trait
+            - Unlike Linux, Windows passwords are hashed without salt, so if you solve a key from a single computer the same password is effectively solved in all other Windows computers in the world
+
+#### Password hacking
+To hack a password stored as an output of one-way cryptographic function, you need to:
+- Identify the hashing algorithm used
+- Try possible candidates whether their hash matches the one you're solving
+
+
+Obvious way to handle the second step is to try each possible combination until you find a matching hash - this approach is fittingly named as __brute force__. For short passwords with limited characters this can be a working solution, as there's only limited number of possibilities to go trough (e.g. LanMan:s 7-byte array of uppercase characters and digits).
+
+Slightly more elaborate way of brute-forcing is to use a prebuilt dictionary holding commonly used passphrases instead of going through arbitarily through every possible combination.
+
+An alternative to brute force is using a __rainbow table__, which simply put is a precomputed database of hashes. This [introduces a tradeoff](https://eprint.iacr.org/2013/591.pdf) from required compute resources to time and space required to load and store the precomputed hashes to memory.
+
+#### Computing hashes
+While still having value in other areas, the hashing algorithms of yesteryear, such as MD5, have been made obsolete in cryptography by advances in compute power and parallellism. Especially the capability of modern GPU:s to handle arbitary arithmetic functions way beyond what's needed in graphics has given practically anyone access to high speed parallel processing. 
+
+With a reasonably modern gaming or content creation computer one can simply install a GPU compatible open source tool such as hashcat, and start calculating hashes with rates of billions per second  without having pretty much any actual technical knowledge on the area.
+
+[The Art of Hacking Series LiveLessons: Lesson 6: Hacking User Credentials](https://learning.oreilly.com/videos/security-penetration-testing/9780134833989/9780134833989-sptt_00_06_00_00)
+
+As a final note, one must understand that also the algorithms generally accepted as unbreakable today, are already known to be weak against technologies of tomorrow. [SSH Quantum Safe Solutions](https://www.ssh.com/solutions/quantum-safe-cryptography-qsc-solutions)
+
 
 
 ---
@@ -67,6 +140,7 @@ But now it crashed with a different error:
 % sudo make install
 
 
+### Get info on available compute
 % hashcat -I
 hashcat (v2.01-8370-g521a931a8) starting in backend information mode
 
@@ -115,7 +189,7 @@ OpenCL Platform ID #1
 
 ```
 
-As build seemed to go without errors and the GPU (or whatever the integrated SoC should it be called) cores were correctly identified, I ran few benchmarks:
+As build seemed to go without errors and the GPU (or whatever the [integrated SoC](https://debugger.medium.com/why-is-apples-m1-chip-so-fast-3262b158cba2) should be called) cores were correctly identified, I ran few benchmarks:
 ```
 % # MD5
 % hashcat -b -m 0 -O | grep "Speed.#1"
@@ -131,7 +205,8 @@ Speed.#1.........:   305.0 MH/s (53.57ms) @ Accel:16 Loops:1024 Thr:128 Vec:1
 ```
 
 As far as I'm able to intepret these, the figures are not bad at all for a small laptop!
-- I did try to invoke also the OpenCL API with "-d 2" to compare results with default Metal, but couldn't get anything but kernel build errors out of it.
+- I did try to invoke also the OpenCL API with "-d 2" to compare results with default Metal, but couldn't get anything but kernel build errors out of it
+    - Hashcat does actually print a warning regarding the unreliability of Apples OpenCL drivers every time it's run, so it is what it is..
 
 ---
 
@@ -165,7 +240,7 @@ NTLM, HC: 1000 JtR: nt Summary: Often used in Windows Active Directory.
 Domain Cached Credentials, HC: 1100 JtR: mscach
 ```
 
-Now having a good assumption on MD5, I fetched a leaked [rockyou -dictionary from GitHub](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou.txt.tar.gz) and gave it a go
+Now having a good assumption on MD5, I fetched the leaked [rockyou -dictionary from GitHub](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou.txt.tar.gz) and gave it a go
 
 Flags:
 - "-m 0" to attack against MD5
@@ -356,8 +431,8 @@ With the more intensive profile I could shave off few weeks from the estimate ha
 
 ---
 
-## Bonus
-### Crack your own hash
+### Bonus
+#### Crack your own hash
 - To keep things simple, I'll stick to MD5 with input
     - Length of 8 characters
     - Uppercase, lowercase and digits
@@ -421,4 +496,3 @@ Notebook hosted in [GitHub](https://github.com/lauripe/security-basics/blob/main
 - [hashcat](https://hashcat.net/hashcat/)
 - [name-that-hash](https://github.com/HashPals/Name-That-Hash)
 - [homebrew](https://brew.sh)
-- [Apple SoC](https://debugger.medium.com/why-is-apples-m1-chip-so-fast-3262b158cba2)

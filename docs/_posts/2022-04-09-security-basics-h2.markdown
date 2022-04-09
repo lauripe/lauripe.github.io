@@ -366,12 +366,15 @@ And the __monkey__ came out of hiding soon enough!
 ---
 
 ### d) Crack this hash - task d
+
 ```
 $2y$18$axMtQ4N8j/NQVItQJed9uORfsUK667RAWfycwFMtDBD6zAo1Se2eu
 ```
+
 Just by looking at the length and variety of characters user, one can tell that this is not a trivial task.
 
 Let's start by guesstimating the used algorithm:
+
 ```
 name-that-hash -t "$2y$18$axMtQ4N8j/NQVItQJed9uORfsUK667RAWfycwFMtDBD6zAo1Se2eu"
 
@@ -386,6 +389,7 @@ Woltlab Burning Board 4.x,
 I have no idea where such algorithm is used, and is the rockyou -dictionary at all relevant here, but I'll just keep using it and maybe get wiser later on.
 
 Initally the estimate was around 309 days, so I ended up trying Workload Profile 4
+
 ```
 - [ Workload Profiles ] -
 
@@ -432,6 +436,7 @@ With the more intensive profile I could shave off few weeks from the estimate ha
 ---
 
 ### Bonus
+
 #### Crack your own hash
 - To keep things simple, I'll stick to MD5 with input
     - Length of 8 characters
@@ -442,6 +447,7 @@ With the more intensive profile I could shave off few weeks from the estimate ha
     - "-a 3" Brute force attack mode
     - "-i" Incremental mode
         Starts with lenght of 1 and extends when options are exhausted
+
 ```
 # Calculate a hash (and remember to omit the newline)
 % echo -n "kissa123" | md5 > my.hash
@@ -480,6 +486,7 @@ Stopped: Sat Apr  9 14:30:01 2022
 % cat crack.pot
 % 13c3a117d0013ab22417c8edca354b76:kissa123
 ```
+
 Even though 8 characters used to be ok for passwords, MD5 is just weak against modern computers.
 - Correct input for given hash was guessed using brute force in ~35 seconds.
 - Hash rate: 4822 MH/s

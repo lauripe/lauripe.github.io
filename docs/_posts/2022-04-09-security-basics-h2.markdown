@@ -500,6 +500,9 @@ Notebook hosted in [GitHub](https://github.com/lauripe/security-basics/blob/main
 ---
 
 ## Links and references
+- [Schneier 2015: Applied Cryptography](https://learning.oreilly.com/library/view/applied-cryptography-protocols/9781119096726/10_chap02.html)
+- [The Art of Hacking Series LiveLessons: Lesson 6: Hacking User Credentials](https://learning.oreilly.com/videos/security-penetration-testing/9780134833989/9780134833989-sptt_00_06_00_00)
+- [Task assignment h2](https://terokarvinen.com/2021/trust-to-blockchain-2022/)
 - [hashcat](https://hashcat.net/hashcat/)
 - [name-that-hash](https://github.com/HashPals/Name-That-Hash)
 - [homebrew](https://brew.sh)

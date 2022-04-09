@@ -453,7 +453,7 @@ With the more intensive profile I could shave off few weeks from the estimate ha
 % echo -n "kissa123" | md5 > my.hash
 
 # Crack the calculated hash
-% hashcat -O -m 0 -a 3 -i "dcf14e3f456a8ceb0d96dac7410af78c" -o crack.pot
+% hashcat -O -m 0 -a 3 -i my.hash -o crack.pot
 
 ...
 

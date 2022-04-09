@@ -80,14 +80,14 @@ One way cryptography solves the setup challenge involved in symmetric approach
 #### Password hacking
 To hack a password stored as an output of one-way cryptographic function, you need to:
 - Identify the hashing algorithm used
-- Try possible candidates whether their hash matches the one you're solving
+- Try out possible candidates untill the hash matches the one you're solving
 
 
 Obvious way to handle the second step is to try each possible combination until you find a matching hash - this approach is fittingly named as __brute force__. For short passwords with limited characters this can be a working solution, as there's only limited number of possibilities to go trough (e.g. LanMan:s 7-byte array of uppercase characters and digits).
 
-Slightly more elaborate way of brute-forcing is to use a prebuilt dictionary holding commonly used passphrases instead of going through arbitarily through every possible combination.
+Slightly more elaborate way of brute-forcing is to use a prebuilt dictionary holding commonly used passphrases instead of going arbitarily through every possible combination.
 
-An alternative to brute force is using a __rainbow table__, which simply put is a precomputed database of hashes. This [introduces a tradeoff](https://eprint.iacr.org/2013/591.pdf) from required compute resources to time and space required to load and store the precomputed hashes to memory.
+An alternative to brute force is using a __rainbow table__, which simply put is a precomputed database of hashes. This [introduces a tradeoff](https://eprint.iacr.org/2013/591.pdf) from required compute resources to time and space required to load and store the precomputed hashes into memory.
 
 #### Computing hashes
 While still having value in other areas, the hashing algorithms of yesteryear, such as MD5, have been made obsolete in cryptography by advances in compute power and parallellism. Especially the capability of modern GPU:s to handle arbitary arithmetic functions way beyond what's needed in graphics has given practically anyone access to high speed parallel processing. 
@@ -96,7 +96,7 @@ With a reasonably modern gaming or content creation computer one can simply inst
 
 [The Art of Hacking Series LiveLessons: Lesson 6: Hacking User Credentials](https://learning.oreilly.com/videos/security-penetration-testing/9780134833989/9780134833989-sptt_00_06_00_00)
 
-As a final note, one must understand that also the algorithms generally accepted as unbreakable today, are already known to be weak against technologies of tomorrow. [SSH Quantum Safe Solutions](https://www.ssh.com/solutions/quantum-safe-cryptography-qsc-solutions)
+As a final note, one must understand that also the algorithms generally accepted as unbreakable today, are already known to be weak against technologies of tomorrow. No need to say this is an ongoing game of cat and mouse, and there's already emerging protection for future proofing such as [SSH Quantum Safe Solutions](https://www.ssh.com/solutions/quantum-safe-cryptography-qsc-solutions).
 
 
 

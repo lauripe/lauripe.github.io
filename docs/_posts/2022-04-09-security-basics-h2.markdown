@@ -531,7 +531,26 @@ Even though 8 characters used to be ok for passwords, MD5 is just weak against m
 
 ---
 
-### Cryptopals challenge 1
+
+#### Run it on GPU
+- I resorted to Windows desktop with discrete GPU here
+
+```
+CUDA API (CUDA 11.6)
+====================
+* Device #1: NVIDIA GeForce GTX 1080, 7213/8191 MB, 20MCU
+
+> .\hashcat.exe -O -m 0 -a 3 -i f2805d0412dbd008ad4c95fb01e342b9 -o crack.pot
+```
+
+Using the same Kissa234 MD5 as in "Crack your own hash", here's how the stats from two quite different setups compare
+Hash rates are from last iteration with 8-character mask (?1?2?2?2?2?2?2?3 [8])
+- (Desktop) Nvidia GTX 1080, CUDA: 23435.7 MH/s, cracked in 11 seconds
+- (Laptop) Apple M1 Pro, Metal: 4824.5 MH/s, cracked in 35 seconds
+
+---
+
+#### Cryptopals challenge 1
 Notebook hosted in [GitHub](https://github.com/lauripe/security-basics/blob/main/cryptopals/basics.ipynb)
 
 ---

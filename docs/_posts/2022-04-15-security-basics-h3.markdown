@@ -18,13 +18,13 @@ The process is made of following elements:
 __Cryptographic algorithm__ aka __cipher__ describes the functions applied in trasformations.
 
 These can be broadly classified as:
-- __symmetric algorithms__ where the the encryption- and decryption keys are the same or can be calculated from the other
-- __public-key algorithms__ where a __public key__ is used to encrypt and __private key__ is required to decipher the message
+- __symmetric algorithms__ where the the encryption- and decryption keys are the same or can be calculated from each other
+- __public-key algorithms__ where a __public key__ is used to encipher and __private key__ is required to decipher the message
 
 In addition to securing message confidentiality, cryptography is often applied also to:
 - __Authentication__ to validate the senders identity
 - __Integrity__ to validate the message was delivered unaltered
-- __Nonrepudiation__ to prove that a certain message was actually sent by it's sender.
+- __Nonrepudiation__ to prove that a certain message was actually sent by its sender.
 
 
 ### Steganography

@@ -73,7 +73,7 @@ Only way to hack a one-time pad encryption is to attack against the key generati
 __Secure Shell__ or __SSH__ provides a keypair based authentication as an alternative to password login.
 - Clients public key is stored in the servers authorized_keys configuration
 - When client connects to the server, the public key stored in the server acts as a lock, which can be opened only by it's corresponding private key
-- Supports several host-key algorithms, such as RSA and ECDSA 
+- Supports several algorithms, such as RSA and ECDSA 
 
 [SSH key based secure authentication](https://www.ssh.com/academy/ssh/key)
 

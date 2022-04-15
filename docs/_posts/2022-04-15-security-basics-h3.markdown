@@ -40,7 +40,9 @@ __Transposition cipher__ is one, where the plaintext message is written in e.g. 
 
 
 ### Simple XOR
-__XOR__ is abbreviation of __exclusive or__, logically something similiar to the question "Are you coming or not?" - you can't have both or neither, it's always either one or another. On bitwise operations XOR is true (1) when one is 1 and the other is 0 and false (0) when both are either 1 or 0.
+__XOR__ is abbreviation of __exclusive or__, logically something similiar to the question "Are you coming or not?" - you can't have both or neither, it's always either one or another ("maybe later" isn't an option in this example). 
+
+On bitwise operations XOR is true (1) when one is 1 and the other is 0 and false (0) when both are either 1 or 0.
 
 Using XOR as cipher can be done by calculating the output of each bit in the plaintext against each bit of a string representing a key. While certainly possible, it's not advised to use XOR as a cipher as it's trivial to crack even with longer keys. Process of cracking a XOR cipher is following:
 - Solve the length of the key with [__counting coincidences__](https://pages.mtu.edu/~shene/NSF-4/Tutorial/VIG/Vig-IOC.html) procedure

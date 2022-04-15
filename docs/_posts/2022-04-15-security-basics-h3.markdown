@@ -72,7 +72,7 @@ Only way to hack a one-time pad encryption is to attack against the key generati
 
 __Secure Shell__ or __SSH__ provides a keypair based authentication as an alternative to password login.
 - Clients public key is stored in the servers authorized_keys configuration
-- When client connects to the server, the public key stored in the server acts as a lock, which can be opened only by it's corresponding private key
+- When client connects to the server, the public key stored in the server acts as a lock, which can be opened only by its corresponding private key
 - Supports several algorithms, such as RSA and ECDSA 
 
 [SSH key based secure authentication](https://www.ssh.com/academy/ssh/key)
@@ -80,7 +80,7 @@ __Secure Shell__ or __SSH__ provides a keypair based authentication as an altern
 __Public Key Infrastructure__ or __PKI__ provides a keypair based method for digital signatures.
 - Signer uses the personal private key to digitally sign a document. The private key is kept secret, as anyone gaining access could impersonate the keys original owner.
 - Corresponding public key is used to verify the signers identity. Public key can be openly shared.
-- Often also a __Certificate Authority__ or __CA__ is used as an arbitrator to provide trust in the document and the process of signing it.
+- Often also a __Certificate Authority__ or in short __CA__ is used as an arbitrator to provide trust in the document and the process of signing it.
 
 [DocuSign - Digital Signatures FAQ](https://www.docusign.com/how-it-works/electronic-signature/digital-signature/digital-signature-faq)
 

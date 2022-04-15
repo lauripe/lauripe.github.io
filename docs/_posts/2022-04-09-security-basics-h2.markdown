@@ -550,11 +550,6 @@ Hash rates are from last iteration with 8-character mask (?1?2?2?2?2?2?2?3 [8])
 
 ---
 
-#### Cryptopals challenge 1
-Notebook hosted in [GitHub](https://github.com/lauripe/security-basics/blob/main/cryptopals/basics.ipynb)
-
----
-
 ## Links and references
 - [Schneier 2015: Applied Cryptography](https://learning.oreilly.com/library/view/applied-cryptography-protocols/9781119096726/10_chap02.html)
 - [The Art of Hacking Series LiveLessons: Lesson 6: Hacking User Credentials](https://learning.oreilly.com/videos/security-penetration-testing/9780134833989/9780134833989-sptt_00_06_00_00)

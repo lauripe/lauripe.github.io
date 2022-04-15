@@ -45,8 +45,12 @@ Using XOR as cipher can be done by calculating the output of each bit in the pla
 - Shift the cleartext bytes with the amount of keys lenght and XOR the shifted ciphertext against itself
 - Solve the remaining plaintext XORed with the plaintext shifted by the keylength
 
-### One Time Pad
+### One-time Pad
+One-time pad is an encryption scheme where the key is an array of random letters with the length of the message to be encrypted, and each letter in the message is summed with the corresponding letter in the key, and the ciphertext is modulo 26 of the sum.
+This is an symmetric algorithm where each encryption key should be completely random and used only once. 
+While the approach does have quite a few practical shortcomings, it still has one quite remarkable feature - taken that the key creation is truly random, the encryption is completely unhackable. Without access to the key used in encryption, there's no way of figuring out if a cleartext derived out of the encrypted message is the actual message or any other string of the same length.
 
+Only way to hack a one-time pad encryption is to attack against the key generation scheme - if the key or even parts of it are reused, or if the generation has any non-random properties, it might open a possibility to attacker to get something out of the ciphertext.
 
 
 ### Computer algorithms

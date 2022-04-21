@@ -151,7 +151,7 @@ Finally, in order to access the hidden .onion services, following setting needs 
 
 #### It works! The dirty secrets hidden in onion-routed darkweb are now visible
 - On a side note, the browser is still vanilla Firefox instead of the specialized fork included in the Tor-browser bundle, and as such it's also lacking the security optimizations and other configurations done in favor of security and anonymity.
-- I suppose greatest risks in using standard browser through a tor-proxy are:
+- I suppose greatest risks in using standard browser instead of the one supported by Tor Project:
     - The browser might collect user telemetry and send it to a third party (i.e. Google Chrome)
     - The possibility to mistakenly generate non-proxied internet traffic (e.g. DNS-requests exposing the sites you're trying to access)
     - Getting hacked through a vanilla-browser weakness when visiting a malicious onion-service
@@ -162,8 +162,32 @@ Finally, in order to access the hidden .onion services, following setting needs 
 
 ---
 
+## Tor user de-anonymized
+Multiple examples of de-anonymization exist, and especially the ones involving criminal charges have raised a fair amount of publicity, and also some academic research.
+
+Notable example from Finland is the arrest of Lasse Kärkkäinen, the founder of major national Tor-based online-marketplace for illegal substances called Douppikauppa. During 2014 FBI managed to locate and bring down a major international marketplace Silk Road 2, and by investigating the seized servers the authorities also got hold of at least some of the messages sent between buyers and sellers. Within the buyers was also a account called __redword__, who seemed to be trafficing large amounts of drugs into Finland via Netherlands. 
+
+FBI shared their findings with Finnish authorities, who then contacted Dutch autorities. Eventually after comparing the dates and locations of the the trade transactions obtained from the seized Silk Road files to Finnish residents located at the area at the same time, they were able to identify the person of mr. Kärkkäinen being the one that matches.
+
+As in many other examples, the tor-network itself retained the users anonymity and the identification was established by correlating a trail of documented real world events to corresponding anonymous transactions in the dark web.
+
+[Nurmi, J. (2019). Understanding the Usage of Anonymous Onion Services: Empirical Experiments to Study Criminal Activities in the Tor Network.](http://urn.fi/URN:ISBN:978-952-03-1091-2)
+
+---
+
+## Tor alternatives
+In addition to Tor, there's also other projects thriving for user anonymity and lack of censorship. Common features are stong encryption schemes and decentralized arcitechture with peer to peer networking.
+
+- [Invisible Internet Project](https://geti2p.net/fi/)
+- [Freenet](https://freenetproject.org)
+- [Lokinet](https://lokinet.org)
+- [ZeroNet](https://zeronet.io)
+
+---
+
 ## Links and references
 - [Shavers & Bair 2016: Hiding Behind the Keyboard](https://learning.oreilly.com/library/view/hiding-behind-the/9780128033524/XHTML/B9780128033401000021/B9780128033401000021.xhtml#s0010)
 - [Tor Project](https://www.torproject.org)
 - [Tor Browser User Manual](https://tb-manual.torproject.org)
+- [Nurmi 2019: Understanding the Usage of Anonymous Onion Services: Empirical Experiments to Study Criminal Activities in the Tor Network.](http://urn.fi/URN:ISBN:978-952-03-1091-2)
 - [Task assignment h4](https://terokarvinen.com/2021/trust-to-blockchain-2022/)

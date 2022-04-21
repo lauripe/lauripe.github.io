@@ -1,12 +1,86 @@
 ---
 layout: post
-title:  "Tor Network"
+title:  "The Onion Routing"
 date:   2022-04-20 00:00:00 +0300
 categories: ICT4HM103
 ---
-## Building Tor from source
+## Tor Network
 
-As the Tor-browser bundle wasn't available for Linux running on arm-cpu (the VM host used was an Apple laptop with a M1 chip), I decided to try whether I can get it to work by simply building the Tor standalone from sources and setting it as SOCKS proxy to Firefox.
+### Foundation
+The concept of onion routing was initially developed at U.S. Naval Research Lab at 90's to answer the challenge on how to communicate discreetly and without disclosing the participants over a network that is possibly monitored. At early 2000's two MIT graduates started to further develop the concepts, which eventually paved way into forming a non-profit organization [Tor Project Inc](](https://www.torproject.org/about/history/)) to maintain the development.
+
+### Onion Routing
+Onion network is made of multiple relays, which serve three different functions in the routing:
+- __Entry / Guard:__ This is where the data is initially sent
+- __Middle:__ This is a hop in between the entry and the exit
+- __Exit:__ This is where the the data comes out of Tor back to open web
+
+As none of the relays know both the origin and the final destination and external observer is only able to see something going in to an entry point or coming out from an exit point, this does a remarkably good job in obfuscating the actual participants in the communication. In addition, the relays are assigned randomly and the communication is rerouted every 10 minutes to make tracking even more challenging. 
+
+Transmitted data is initially secured using three layers of encryption, and one layer is peeled off on each of the relays. The final leg from exit node to the recipient is therefore unencrypted (of course you might want to encrypt a sensitive payload separately by yourself).
+
+![How Tor works](https://tb-manual.torproject.org/static/images/how-tor-works.png)
+
+Image from [tor-manual](https://tb-manual.torproject.org/about/)
+
+### Tor Browser
+Tor Browser is a modified version of Mozilla Firefox, and while it's possible to use Tor with other browsers, it's generally advised against as they lack the [security and privacy features](https://support.torproject.org/tbb/tbb-4/) implemented in the tor-specific version.
+
+The official Tor Browser is available for multiple operating systems and also different languages, and the installation itself is as simple as installing any other software from internet. The ease of access and pretty much non-existent learning curve makes this an easy choice for anyone in need of secure communications or a way to circumvent monitoring and/or censorship such as the [Great Firewall](https://support.torproject.org/censorship/connecting-from-china/) of China.
+
+In addition to the general availability, easy setup and ease of use, the Tor itself is incredibly secure, and could be considered unbreakable, especially if you're not backed by resources such as a large goverment intelligence agency.
+
+### Forensic analysis and Tor
+
+So what are your options as an investigator, given that Tor is very easy to setup and virtually unbreakable? 
+
+#### Traces of Tor usage
+
+As Tor effectively hides all the artifacts usually left from standard internet usage, the first step is to identify whether the target has used Tor to start with. Places to look into:
+- Local filesystem for any tor related files or binaries. A hash-library generated from the publicly available tor distributions might be useful in identifying renamed files.
+- Page- and cache files might have traces of tor usage
+- Memory dump. While effective, this is a time critical activity as tor-browser does a good job of cleaning its traces from RAM after closing and even after minutes of idling.
+
+#### The weakest link
+
+As Tor itself is hard, it's often more viable to attack the user instead. An obvious way is to target possible mistakes in browser settings or general behaviour, such as:
+- Geolocation, user might have allowed websites to obtain his/hers location
+- Allowed executables and browser extensions might open a possibility to execute e.g. a tracker extracting the real ip address on target users device
+    - Similar tracker code embedded in downloadables, such as videos
+- Activities in open internet
+    - Usernames, accounts, email-addresses
+    - Timeseries correlation, such as user was identified using a tor browser while an illicit event took place in the dark web
+
+
+[Shavers & Bair 2016: Hiding Behind the Keyboard](https://learning.oreilly.com/library/view/hiding-behind-the/9780128033524/XHTML/B9780128033401000021/B9780128033401000021.xhtml#s0010)
+
+---
+
+## Tor browser hands-on
+
+### Installation
+
+Initial attempt was to load the [bundled Tor-browser-package](https://www.torproject.org/download/) and get going
+```
+ubuntu@xubu-sandbox:~$ wget https://www.torproject.org/dist/torbrowser/11.0.10/tor-browser-linux64-11.0.10_en-US.tar.xz
+ubuntu@xubu-sandbox:~$ tar -xJf tor-browser-linux64-11.0.10_en-US.tar.xz
+ubuntu@xubu-sandbox:~$ cd tor-browser_en-US/
+ubuntu@xubu-sandbox:~/tor-browser_en-US$ ./start-tor-browser.desktop 
+Launching './Browser/start-tor-browser --detach'...
+./Browser/start-tor-browser: line 28: [: : integer expression expected
+
+```
+
+But it failed on missing CPU features with following message:
+- _Tor Browser requires a CPU with SSE2 support. Exiting._
+
+The message presented obvious that the host (Apple laptop with a M1 chip) running the VM was not a good fit for this.
+
+Internet and the lecturer however told that Tor should run also on arm-CPU just fine (albeit with some tinkering), so I decided to try an different approach.
+
+### Building Tor from source
+
+As the Tor-browser bundle wasn't available for the VM at hand, I took a workaround to build Tor standalone from the source code and setting it as SOCKS proxy to Firefox.
 
 
 ```
@@ -56,7 +130,7 @@ ubuntu@xubu-sandbox:~/tor-0.4.6.10$ tor
 
 ---
 
-## Tor proxy and Firefox settings
+### Tor proxy and Firefox settings
 Tor was left with vanilla settings so the SOCKS proxy is served at its default location, port 9050 of localhost.
 
 Firefox > Settings > General > Connection Settings
@@ -70,13 +144,26 @@ Firefox > Settings > General > Connection Settings
 
 #### Enabling .onion services
 
-Now checking e.g. https://www.whatismyip.com/ already shows that my ip-address and location are hidden from the service provider (in this case my location was initially Warsow and then Amsterdam).
+Now checking e.g. https://www.whatismyip.com/ already shows that my ip-address and location are hidden from the service provider (in this case my location was initially shown as Warsow and some time later as Amsterdam).
 
-Finally, in order to access .onion services, the following needs to be set as false in the about:config (in addition to enabling SOCKS proxy for DSN in the connection settings earlier):
-- network.dns.blockDotOnion: true
+Finally, in order to access the hidden .onion services, following setting needs to be set as false in Firefoxes _about:config_ (in addition to enabling SOCKS proxy for DSN in the connection settings earlier):
+- network.dns.blockDotOnion: __false__
 
-#### It works! All dirty secrets of the onion-made darkweb are now browsable.
+#### It works! The dirty secrets hidden in onion-routed darkweb are now visible
+- On a side note, the browser is still vanilla Firefox instead of the specialized fork included in the Tor-browser bundle, and as such it's also lacking the security optimizations and other configurations done in favor of security and anonymity.
+- I suppose greatest risks in using standard browser through a tor-proxy are:
+    - The browser might collect user telemetry and send it to a third party (i.e. Google Chrome)
+    - The possibility to mistakenly generate non-proxied internet traffic (e.g. DNS-requests exposing the sites you're trying to access)
+    - Getting hacked through a vanilla-browser weakness when visiting a malicious onion-service
+    - History and various cached files stored in the local filesystem
+- It's also a good idea to disable all executables such as javascript and possible extensions
+- It's even better idea to use the actual Tor-browser - this should be taken simply as a technical execise to get familiar with the basic concepts.
 ![Success](/assets/img/tor-firefox.png)
 
 ---
 
+## Links and references
+- [Shavers & Bair 2016: Hiding Behind the Keyboard](https://learning.oreilly.com/library/view/hiding-behind-the/9780128033524/XHTML/B9780128033401000021/B9780128033401000021.xhtml#s0010)
+- [Tor Project](https://www.torproject.org)
+- [Tor Browser User Manual](https://tb-manual.torproject.org)
+- [Task assignment h4](https://terokarvinen.com/2021/trust-to-blockchain-2022/)

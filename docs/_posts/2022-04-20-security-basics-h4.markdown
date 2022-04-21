@@ -150,6 +150,10 @@ Finally, in order to access the hidden .onion services, following setting needs 
 - network.dns.blockDotOnion: __false__
 
 #### It works! The dirty secrets hidden in onion-routed darkweb are now visible
+
+![Success](/assets/img/tor-firefox.png)
+
+
 - On a side note, the browser is still vanilla Firefox instead of the specialized fork included in the Tor-browser bundle, and as such it's also lacking the security optimizations and other configurations done in favor of security and anonymity.
 - I suppose greatest risks in using standard browser instead of the one supported by Tor Project:
     - The browser might collect user telemetry and send it to a third party (i.e. Google Chrome)
@@ -159,7 +163,6 @@ Finally, in order to access the hidden .onion services, following setting needs 
 - It's also a good idea to disable all executables such as javascript and possible extensions
 - It's even better idea to use the actual Tor-browser - using standard Firefox should be taken simply as a technical execise to get familiar with the basic concepts.
 
-![Success](/assets/img/tor-firefox.png)
 
 ---
 

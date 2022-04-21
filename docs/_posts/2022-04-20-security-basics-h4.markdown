@@ -157,7 +157,7 @@ Finally, in order to access the hidden .onion services, following setting needs 
     - Getting hacked through a vanilla-browser weakness when visiting a malicious onion-service
     - History and various cached files stored in the local filesystem
 - It's also a good idea to disable all executables such as javascript and possible extensions
-- It's even better idea to use the actual Tor-browser - this should be taken simply as a technical execise to get familiar with the basic concepts.
+- It's even better idea to use the actual Tor-browser - using standard Firefox should be taken simply as a technical execise to get familiar with the basic concepts.
 ![Success](/assets/img/tor-firefox.png)
 
 ---

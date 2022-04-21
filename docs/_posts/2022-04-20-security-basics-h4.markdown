@@ -158,16 +158,17 @@ Finally, in order to access the hidden .onion services, following setting needs 
     - History and various cached files stored in the local filesystem
 - It's also a good idea to disable all executables such as javascript and possible extensions
 - It's even better idea to use the actual Tor-browser - using standard Firefox should be taken simply as a technical execise to get familiar with the basic concepts.
+
 ![Success](/assets/img/tor-firefox.png)
 
 ---
 
-## Tor user de-anonymized
+## Compromizing a Tor users anonymity
 Multiple examples of de-anonymization exist, and especially the ones involving criminal charges have raised a fair amount of publicity, and also some academic research.
 
-Notable example from Finland is the arrest of Lasse Kärkkäinen, the founder of major national Tor-based online-marketplace for illegal substances called Douppikauppa. During 2014 FBI managed to locate and bring down a major international marketplace Silk Road 2, and by investigating the seized servers the authorities also got hold of at least some of the messages sent between buyers and sellers. Within the buyers was also a account called __redword__, who seemed to be trafficing large amounts of drugs into Finland via Netherlands. 
+Notable example from Finland is the arrest of Lasse Kärkkäinen, the founder of major national Tor-based online-marketplace for illegal substances called Douppikauppa. During 2014 FBI managed to locate and bring down a major international marketplace Silk Road 2, and by investigating the seized servers the authorities also got hold of at least some of the messages sent between buyers and sellers. Within the buyers was also a account called _redword_, who seemed to be trafficing large amounts of drugs into Finland via Netherlands. 
 
-FBI shared their findings with Finnish authorities, who then contacted Dutch autorities. Eventually after comparing the dates and locations of the the trade transactions obtained from the seized Silk Road files to Finnish residents located at the area at the same time, they were able to identify the person of mr. Kärkkäinen being the one that matches.
+FBI shared their findings with Finnish authorities, who then contacted Dutch autorities. Eventually after comparing the dates and locations of the the trade transactions obtained from the seized Silk Road files to Finnish residents located at the area in Netherlands at the same time, they were able to identify the person of mr. Kärkkäinen being the one that matches.
 
 As in many other examples, the tor-network itself retained the users anonymity and the identification was established by correlating a trail of documented real world events to corresponding anonymous transactions in the dark web.
 

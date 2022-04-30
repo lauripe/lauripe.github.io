@@ -82,4 +82,8 @@ Most famous successor of Bitcoin is Ethereum, which was published as a whitepape
 ## Links and References
 
 - [Nakamoto, 2008 - Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)
+- [Felten et al 2015: Bitcoin and Cryptocurrency Technologies](https://www.coursera.org/learn/cryptocurrency/home/week/1)
 - [bitcoin.org](https://bitcoin.org)
+- [ethereum.org](https://ethereum.org)
+- [Finlex](https://www.finlex.fi/fi/laki/ajantasa/2019/20190572)
+- [vero.fi](https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48411/virtuaalivaluuttojen-verotus2/)

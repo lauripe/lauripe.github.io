@@ -32,14 +32,9 @@ As also the hashes of proof-of-work are included in the blocks and hashes of sub
 ---
 
 ## Historical BTC course
-I used [Yahoo Finance](https://finance.yahoo.com/quote/BTC-USD/) as a source to get answers on possible wins and losses. Yahoos data starts from 2014, so the early years of bitcoin aren't included.
-
-- At the time of writing 2022-04-29 the course of BTC-USD was around 38 547
-- Lowest in Yahoos recorded history was on 2015-01-14 with the value of 178
-- Highest on 2021-11-08 with the value of 67 566
+I used [Yahoo Finance](https://finance.yahoo.com/quote/BTC-USD/) as a source to get answers on possible wins and losses. Yahoos data starts from 2014, so the early years of bitcoin aren't included. At the time of writing 2022-04-29 the course of BTC-USD was around 38 547.
 
 ### Hypothetical returns on investing 1000 $
-
 
 __Best scenario__
 - Buy at 2015-01-15 with price of 209.843994140625
@@ -73,9 +68,8 @@ It's possible for multiple blocks being simultaneously forked from a common pare
 
 ## AltCoins
 
-Most famous successor of Bitcoin is Ethereum, which was published as a whitepaper by Vitalik Buterin at 2013. The first Ethers went on sale during 2014, and could be bought with bitcoin. Since then multiple altcoins have surfaced, which many are based on Ethereums smart contract -functionality. A notable trend among the altcoins are so called meme-coins such as [Dogecoin](https://dogecoin.com), which have reached a [considerable market capitalization](https://finance.yahoo.com/quote/DOGE-USD/) regardless of being launched as a silly joke.
+Most famous successor of Bitcoin is [Ethereum](https://ethereum.org), which was published as a whitepaper by Vitalik Buterin at 2013. The first Ethers went on sale during 2014, and could be bought with bitcoin. Since then multiple altcoins have surfaced, which many are based on Ethereums smart contract -functionality. A notable trend among the altcoins are so called meme-coins such as [Dogecoin](https://dogecoin.com), which some have managed to reach a [considerable market capitalization](https://finance.yahoo.com/quote/DOGE-USD/) regardless of being launched as a silly joke.
 
-- [ethereum.org](https://ethereum.org/en/history/)
 
 ---
 

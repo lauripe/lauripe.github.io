@@ -50,7 +50,7 @@ __Worst scenario__
 
 ---
 
-## Finlands legislation on bitcoin
+## Finland legislation on bitcoin
 
 Bitcoin along with other virtual currencies is considered as a property, but not as a type of currency or security. As it's not seen as a mean of payment in tax legislation, all transactions are subject to capital income tax. This makes the usage of bitcoin as a currency very impractical, as paying anything with bitcoins makes the current value of transferred coins subject to capital income tax.
 

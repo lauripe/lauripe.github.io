@@ -37,14 +37,14 @@ I used [Yahoo Finance](https://finance.yahoo.com/quote/BTC-USD/) as a source to 
 ### Hypothetical returns on investing 1000 $
 
 __Best scenario__
-- Buy at 2015-01-15 with price of 209.843994140625
-- Sell at 2021-11-09 with price of 66971.828125
-- With 1000$ the profit would have been 378370$
+- Buy at 2015-01-15 with price of 209,84 $
+- Sell at 2021-11-09 with price of 66 971,83 $
+- With 1000$ the profit would have been 37 8370 $
 
 __Worst scenario__
-- Buy at 2017-12-17 with price of 19140.80078125
-- Sell at 2018-12-16 with price of 3252.839111328125
-- With 1000$ the profit would have been -830$
+- Buy at 2017-12-17 with price of 19 140,80 $
+- Sell at 2018-12-16 with price of 3 252,84 $
+- With 1000$ the profit would have been -830 $
 
 {% gist 702085f16bf8d8652f398992a2f88b51 %}
 

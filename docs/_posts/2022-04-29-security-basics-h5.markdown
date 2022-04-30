@@ -52,7 +52,9 @@ __Worst scenario__
 
 ## Finlands legislation on bitcoin
 
-Bitcoin along with other virtual currencies is considered as a property, albeit it's not considered as a currency or security. As it's not considered as a mean of payment in tax legislation, all transactions are subject to capital income tax.
+Bitcoin along with other virtual currencies is considered as a property, but not as a type of currency or security. As it's not seen as a mean of payment in tax legislation, all transactions are subject to capital income tax. This makes the usage of bitcoin as a currency very impractical, as paying anything with bitcoins makes the current value of transferred coins subject to capital income tax.
+
+Due to the pseudonymous nature of bitcoin, all transactions must be reported for taxes by yourself - failing to do so might lead into criminal charges on [tax evasion fraud](https://www.hs.fi/kaupunki/art-2000008342550.html).
 
 - [Finlex](https://www.finlex.fi/fi/laki/ajantasa/2019/20190572)
 - [vero.fi](https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48411/virtuaalivaluuttojen-verotus2/)

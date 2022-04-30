@@ -32,28 +32,50 @@ As also the hashes of proof-of-work are included in the blocks and hashes of sub
 ---
 
 ## Historical BTC course
-I used [Yahoo Finance](https://finance.yahoo.com/quote/BTC-USD/) as a source to get answers on possible wins and losses.
+I used [Yahoo Finance](https://finance.yahoo.com/quote/BTC-USD/) as a source to get answers on possible wins and losses. Yahoos data starts from 2014, so the early years of bitcoin aren't included.
 
 - At the time of writing 2022-04-29 the course of BTC-USD was around 38 547
 - Lowest in Yahoos recorded history was on 2015-01-14 with the value of 178
 - Highest on 2021-11-08 with the value of 67 566
 
-The difference between 2015-01-14 and 2021-11-08 was 379.37%, so there has been an opportunity for decent profits. If the history would span longer to the past the ratio would be immensily higher.
-On the other hand, if one would have bought at the top of 2021 and sold at the following dip on January 2022, half of the investment would have vanished into air.
+### Hypothetical returns on investing 1000 $
 
-{% gist 0f9377476ffba23361e3b7c94c683531 %}
+
+__Best scenario__
+- Buy at 2015-01-15 with price of 209.843994140625
+- Sell at 2021-11-09 with price of 66971.828125
+- With 1000$ the profit would have been 378370$
+
+__Worst scenario__
+- Buy at 2017-12-17 with price of 19140.80078125
+- Sell at 2018-12-16 with price of 3252.839111328125
+- With 1000$ the profit would have been -830$
+
+{% gist 702085f16bf8d8652f398992a2f88b51 %}
 
 ---
 
 ## Finlands legislation on bitcoin
 
+Bitcoin along with other virtual currencies is considered as a property, albeit it's not considered as a currency or security. As it's not considered as a mean of payment in tax legislation, all transactions are subject to capital income tax.
+
+- [Finlex](https://www.finlex.fi/fi/laki/ajantasa/2019/20190572)
+- [vero.fi](https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48411/virtuaalivaluuttojen-verotus2/)
+
 ---
 
-## Other uses of Blockchain
+## Blockchain
+Blockchain is an immutable list of records assembled in blocks, and the blocks are linked to predeccessors using cryptography. Commonly each block contains a hash of all previous blocks in addition to the actual messages, so any modification in the closed blocks would invalidate the chain from that point onwards. 
+
+It's possible for multiple blocks being simultaneously forked from a common parent, but only one can be eventually be accepted as a part of the blockchain. This involves a voting procedure, where the network finds mutual agreement on which block is accepted. Bitcoin uses a consensus mechaninsm called Proof-of-Work, where the voting is done by solving computationally demanding cryptographic challenges. The process of solving the puzzles is called mining, and the miners get coins and/or transaction fees as an incentive when a block is accepted in the chain. Alternative mechanism for Proof-of-Work is Proof-of-Stake, where holding a considerable amount of currency can be used a method of validation, as in Proof-of-Work this is done by spending a considerable amount of compute resources.
 
 ---
 
 ## AltCoins
+
+Most famous successor of Bitcoin is Ethereum, which was published as a whitepaper by Vitalik Buterin at 2013. The first Ethers went on sale during 2014, and could be bought with bitcoin. Since then multiple altcoins have surfaced, which many are based on Ethereums smart contract -functionality. A notable trend among the altcoins are so called meme-coins such as [Dogecoin](https://dogecoin.com), which have reached a [considerable market capitalization](https://finance.yahoo.com/quote/DOGE-USD/) regardless of being launched as a silly joke.
+
+- [ethereum.org](https://ethereum.org/en/history/)
 
 ---
 

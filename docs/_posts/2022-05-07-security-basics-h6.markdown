@@ -73,7 +73,7 @@ A mechanism to enable voting for the blockchain-fork to be continued, in proport
 
 In bitcoin the proof of work is effectively a hash-puzzle
 - Solve the nonce from: ```hash(nonce || prev_hash || tx || .. || tx)```
-    - where output is < target
+    - where output-hash is smaller than the given target
 - Can be solved only by guessing
 - Nodes compete on solving the puzzle first (to get the incentive)
 - Nodes re-calculate the difficulty automatically every 2 weeks
@@ -81,11 +81,31 @@ In bitcoin the proof of work is effectively a hash-puzzle
 
 Attack against voting is infeasible as long as majority of miners (by hash power) follow the protocol.
 
-The validation of the solved puzzle is easy, as the guessed nonce is published along with the block. Anyone can then verify that the output of the hash calculated with the nonce is indeed smaller than the target value given ```hash(nonce || prev_hash || tx || .. || tx) < target```
+The validation of the solved puzzle is easy, as the guessed nonce is published along with the block. Anyone can then verify that the output of the hash calculated with the nonce is indeed smaller than the target value given: ```hash(nonce || prev_hash || tx || .. || tx) < target```
+
+([Felten et. al. 2015](https://www.coursera.org/learn/cryptocurrency/lecture/XV5nQ/incentives-and-proof-of-work))
 
 ---
 
 ## Can of Worms
+I tried running whatever was first in the list of "Malicious activity" in Finland.
+In this case it was a 32bit Windows executable dubbed aaaa.exe, and tagged with trojan, rat and asyncrat labels. 
+
+The VM booted to a desktop with a login window to something called Rosvo.
+![Rosvo 1](/assets/img/rosvo1.png)
+
+On the process tree shown in the any.run I could see that there was a parent process aaaa.exe which had launched RosvoBuilder.exe labeled as suspicios and AsyncClient.exe labeled malicious. The malicious had also a tag classifying it as [asyncrat](https://malpedia.caad.fkie.fraunhofer.de/details/win.asyncrat), a remote adminstration tool that can be used in addition to adminstration also for malicious purposes.
+
+![Rosvo 2](/assets/img/rosvo2.png)
+
+Eventually a chat-window popped up and I got a change to briefly chat with a friendly stranger. Actually this was my second run, as the previous ran out of time, and the strager greeted me like an old friend.
+
+![Rosvo 3](/assets/img/rosvo3.png)
+
+Unfortunately I was already running late with a load of other deadlines and the any.run tool appeared to be deep enough to play hours with, so I decided to leave this to a brief scratch on the surface.
+
+
+([Any.Run](https://app.any.run/tasks/fbece9c1-6cd0-43f2-88fe-0448bbb4cee6))
 
 ---
 
@@ -107,7 +127,7 @@ The answer also includes a technical part describing processor branch predictor 
 
 Also as the function has a if - greater than - condition preceding additional calculation, a sorted input provides the branch predictor the opportunity to skip also the additional calculation until the predicate is met.
 
-[Stackoverflow](https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-processing-an-unsorted-array))
+([Stackoverflow: why-is-processing-a-sorted-array-faster-than-processing-an-unsorted-array](https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-processing-an-unsorted-array))
 
 ---
 
@@ -115,7 +135,11 @@ Also as the function has a if - greater than - condition preceding additional ca
 
 {% gist 960a4a70f07db50daf47b6d58238567e %}
 
+[GitHub: lauripe](https://github.com/lauripe/security-basics/blob/main/cryptopals/basics.ipynb)
+
 ---
 ## Links and References
 - [Felten et al 2015: Bitcoin and Cryptocurrency Technologies](https://www.coursera.org/learn/cryptocurrency/lecture/XV5nQ/incentives-and-proof-of-work)
-- [Stackoverflow](https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-processing-an-unsorted-array))
+- [Stackoverflow](https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-processing-an-unsorted-array)
+- [Any.Run](https://app.any.run)
+- [Cryptopals Challenge](https://cryptopals.com/sets/1)

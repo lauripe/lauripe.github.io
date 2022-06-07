@@ -198,3 +198,6 @@ Notebook hosted in [GitHub](https://github.com/lauripe/security-basics/blob/main
 - [DocuSign](https://www.docusign.com/how-it-works/electronic-signature/digital-signature/digital-signature-faq)
 - [Richard Stalman](https://stallman.org)
 - [Cryptopals Challenge](https://cryptopals.com/sets/1)
+
+Assignment h3: 
+[https://terokarvinen.com/2021/trust-to-blockchain-2022/](https://terokarvinen.com/2021/trust-to-blockchain-2022/)

@@ -557,3 +557,6 @@ Hash rates are from last iteration with 8-character mask (?1?2?2?2?2?2?2?3 [8])
 - [hashcat](https://hashcat.net/hashcat/)
 - [name-that-hash](https://github.com/HashPals/Name-That-Hash)
 - [homebrew](https://brew.sh)
+
+Assignment h2: 
+[https://terokarvinen.com/2021/trust-to-blockchain-2022/](https://terokarvinen.com/2021/trust-to-blockchain-2022/)

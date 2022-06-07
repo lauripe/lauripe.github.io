@@ -143,3 +143,6 @@ Also as the function has a if - greater than - condition preceding additional ca
 - [Stackoverflow](https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-processing-an-unsorted-array)
 - [Any.Run](https://app.any.run)
 - [Cryptopals Challenge](https://cryptopals.com/sets/1)
+
+Assignment h6: 
+[https://terokarvinen.com/2021/trust-to-blockchain-2022/](https://terokarvinen.com/2021/trust-to-blockchain-2022/)

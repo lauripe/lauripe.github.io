@@ -194,4 +194,5 @@ In addition to Tor, there's also other projects thriving for user anonymity and 
 - [Tor Project](https://www.torproject.org)
 - [Tor Browser User Manual](https://tb-manual.torproject.org)
 - [Nurmi 2019: Understanding the Usage of Anonymous Onion Services: Empirical Experiments to Study Criminal Activities in the Tor Network.](http://urn.fi/URN:ISBN:978-952-03-1091-2)
-- [Task assignment h4](https://terokarvinen.com/2021/trust-to-blockchain-2022/)
+
+Assignment: [h4](https://terokarvinen.com/2021/trust-to-blockchain-2022/)

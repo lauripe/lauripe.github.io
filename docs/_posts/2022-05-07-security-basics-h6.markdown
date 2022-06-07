@@ -144,4 +144,5 @@ Also as the function has a if - greater than - condition preceding additional ca
 - [Any.Run](https://app.any.run)
 - [Cryptopals Challenge](https://cryptopals.com/sets/1)
 
-Assignment: [h6](https://terokarvinen.com/2021/trust-to-blockchain-2022/)
+Assignment h6: 
+[https://terokarvinen.com/2021/trust-to-blockchain-2022/](https://terokarvinen.com/2021/trust-to-blockchain-2022/)

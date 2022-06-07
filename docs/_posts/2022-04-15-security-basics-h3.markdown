@@ -199,4 +199,5 @@ Notebook hosted in [GitHub](https://github.com/lauripe/security-basics/blob/main
 - [Richard Stalman](https://stallman.org)
 - [Cryptopals Challenge](https://cryptopals.com/sets/1)
 
-Assignment: [h3](https://terokarvinen.com/2021/trust-to-blockchain-2022/)
+Assignment h3: 
+[https://terokarvinen.com/2021/trust-to-blockchain-2022/](https://terokarvinen.com/2021/trust-to-blockchain-2022/)

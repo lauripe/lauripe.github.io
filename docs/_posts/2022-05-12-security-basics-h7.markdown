@@ -51,4 +51,5 @@ As the BTC blockchain is public, a record-breaking single transaction of over 1 
 - [terokarvinen.com - Trust to Blockchain 2022](https://terokarvinen.com/2021/trust-to-blockchain-2022/)
 - [github.com/lauripe - Tidbits and Tinkerings](https://github.com/lauripe/lauripe.github.io)
 
-Assignment: [h7](https://terokarvinen.com/2021/trust-to-blockchain-2022/)
+Assignment h7: 
+[https://terokarvinen.com/2021/trust-to-blockchain-2022/](https://terokarvinen.com/2021/trust-to-blockchain-2022/)

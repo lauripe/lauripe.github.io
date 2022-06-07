@@ -84,4 +84,5 @@ Most famous successor of Bitcoin is [Ethereum](https://ethereum.org), which was 
 - [Finlex](https://www.finlex.fi/fi/laki/ajantasa/2019/20190572)
 - [vero.fi](https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48411/virtuaalivaluuttojen-verotus2/)
 
-Assignment: [h5](https://terokarvinen.com/2021/trust-to-blockchain-2022/)
+Assignment h5: 
+[https://terokarvinen.com/2021/trust-to-blockchain-2022/](https://terokarvinen.com/2021/trust-to-blockchain-2022/)
